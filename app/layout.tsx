@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Landing Page",
-  description: "Landign page in next.js",
+  description: "Landing page in next.js",
 };
 
 export default function RootLayout({
