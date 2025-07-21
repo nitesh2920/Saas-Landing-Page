@@ -4,9 +4,14 @@ import Image from "next/image";
 import MenuIcon from "../../public/icons/menu.svg";
 import Link from "next/link";
 import { useState } from "react";
-import { set } from "mongoose";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navOptions = ["About", "Features", "Updates", "Help", "Customers"];
+const menuVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 }
+};
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
@@ -47,25 +52,38 @@ const Navbar = () => {
             </button>
           </nav>
         </div>
-
-        {isMenuOpen &&(
-            <div className="sm:hidden mt-2 bg-black border border-white border-opacity-10 rounded-lg shadow-lg p-4 space-y-2">
-                {navOptions.map((items,index)=>(
-                    <Link key={index} href={`#${items.toLowerCase()}`} className="block text-white text-base py-2 px-3 rounded hover:bg-gradient-to-r hover:from-pink-200 hover:to-purple-200 transition"
-                    onClick={()=>{setIsMenuOpen(false)}}
-                    >
-                        {items}
-                    </Link>
-                ))}
-                 <button
-              className="w-full bg-white mt-2 py-2 px-4 rounded-lg text-black"
-              onClick={() => setIsMenuOpen(false)}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              key="mobile-menu"
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={menuVariants}
+              transition={{ duration: 0.28, ease: "easeInOut" }}
+              className="sm:hidden z-1 fixed w-full left-0 transition  mt-2 bg-black border border-white border-opacity-10 rounded-lg shadow-lg p-4 space-y-2"
             >
-              Get for free
-            </button>
-            </div>
-
-        )}
+              {navOptions.map((items, index) => (
+                <Link
+                  key={index}
+                  href={`#${items.toLowerCase()}`}
+                  className="block text-white text-base py-2 px-3 rounded hover:bg-gradient-to-r "
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {items}
+                </Link>
+              ))}
+              <button
+                className="w-full bg-white mt-2 py-2 px-4 rounded-lg text-black"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Get for free
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
