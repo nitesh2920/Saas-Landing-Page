@@ -51,6 +51,7 @@ const Navbar = () => {
               Get Started
             </button>
           </nav>
+
         </div>
         <AnimatePresence>
           {isMenuOpen && (
@@ -84,6 +85,31 @@ const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* <div
+        className={`sm:hidden fixed top-0 left-0 right-0 z-50 mt-2 bg-black border border-white border-opacity-10 rounded-lg shadow-lg p-4 space-y-2 transition-opacity duration-300 ease-in-out ${
+          isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {navOptions.map((item, index) => (
+          <Link
+            key={index}
+            href={`#${item.toLowerCase()}`}
+            className="block text-white text-base py-2 px-3 rounded hover:bg-gradient-to-r"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {item}
+          </Link>
+        ))}
+
+        <button
+          className="w-full bg-white mt-2 py-2 px-4 rounded-lg text-black"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Get Started
+        </button>
+      </div> */}
+
       </div>
     </div>
   );
