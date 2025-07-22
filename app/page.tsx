@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import LogoSection from './components/LogoSection';
+import Product from './components/Product';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
    <Navbar />
    <Hero/>
    <LogoSection/>
+   <Product/>
    </div>
     </>
    
