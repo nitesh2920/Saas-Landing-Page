@@ -30,7 +30,7 @@ export default function Product() {
         </div>
 
         <div className="flex justify-center">
-          <motion.div className=""
+          <motion.div className="max-w-6xl"
           style={{
             opacity:opacity,
             rotateX:rotateX,

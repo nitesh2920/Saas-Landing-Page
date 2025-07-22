@@ -21,8 +21,8 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.4 }}
               className="absolute  right-[420px] top-[108px] hidden sm:inline"
               drag
               dragSnapToOrigin
@@ -40,8 +40,8 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: -100 }}
               whileInView={{ opacity: 100, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.4 }}
               className="absolute left-[440px] top-[60px] hidden sm:inline  "
               drag
               dragSnapToOrigin
@@ -68,7 +68,7 @@ const Hero = () => {
         </div>
 
         <div className="flex justify-center mt-9 ">
-          <button className="bg-white text-black py-3 px-5 rounded-lg font-medium">
+          <button className="bg-white cursor-pointer text-black py-3 px-5 rounded-lg font-medium">
             Get Started
           </button>
         </div>
