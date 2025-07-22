@@ -10,8 +10,8 @@ export default function Home() {
    <Navbar />
    <Hero/>
    <LogoSection/>
-  
    <Product/>
+  
    </div>
     </>
    
