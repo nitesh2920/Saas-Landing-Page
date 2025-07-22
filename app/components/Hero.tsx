@@ -8,12 +8,12 @@ import MessageImage from "../../public/images/message.png";
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] py-[72px] sm:py-24 relative overflow-clip">
+    <div className="bg-black  text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] py-[72px] sm:py-15 relative overflow-clip">
       {/* gradient div */}
-      <div className="absolute h-[375px] w-[750px] rounded-[100%] bg-black left-1/2 -translate-x-1/2  border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)] top-[calc(100%-110px)] sm:top-[calc(100%-130px)] border sm:w-[1536px] sm:h-[768px] lg:w-[2400px] lg:h-[750px] "></div>
+      <div className="absolute h-[375px] w-[750px] rounded-[100%] bg-black left-1/2 -translate-x-1/2  border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)] top-[calc(100%-110px)] sm:top-[calc(100%-105px)] border sm:w-[1536px] sm:h-[768px] lg:w-[2400px] lg:h-[750px] "></div>
 
-      <div className="container relative">
-        <div className="flex justify-center mt-8  ">
+      <div className="container relative ">
+        <div className="flex justify-center mt-2  ">
           <div className="inline-flex relative ">
             <h1 className="text-7xl sm:text-9xl font-bold tracking-tighter text-center inline-flex">
               Fancy UI <br /> is more
