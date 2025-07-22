@@ -7,7 +7,6 @@ const LogoSection = () => {
         <h2 className="text-lg text-center text-white/60 mb-17">
           Trusted by world&apos;s leading brands
         </h2>
-
         
         <LogoCarousel />
       </div>
