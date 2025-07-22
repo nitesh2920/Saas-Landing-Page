@@ -1,13 +1,22 @@
 import type { NextConfig } from "next";
+import type { RuleSetRule } from "webpack";
 
 const nextConfig:NextConfig = {
   webpack(config) {
-    // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
+        const rules = config.module.rules as RuleSetRule[];
+
+   const fileLoaderRule = rules.find(
+      (rule): rule is RuleSetRule =>
+        typeof rule !== "string" &&
+        rule.test instanceof RegExp &&
+        rule.test.test(".svg")
     );
 
-    config.module.rules.push(
+    if (!fileLoaderRule) {
+      throw new Error("Could not find the existing SVG file loader rule.");
+    }
+
+    rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
       {
         ...fileLoaderRule,
@@ -18,7 +27,7 @@ const nextConfig:NextConfig = {
       {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
-        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
+        resourceQuery: { not: [ /url/] }, // exclude if *.svg?url
         use: ["@svgr/webpack"],
       }
     );
