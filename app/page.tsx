@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import LogoSection from './components/LogoSection';
 import Product from './components/Product';
 import Faq from './components/FaqSection';
-import Features from './components/Features';
+// import Features from './components/Features';
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
    <Navbar />
    <Hero/>
    <LogoSection/>
-   <Features/>
+   {/* <Features/> */}
    <Product/>
    <Faq/>
   
