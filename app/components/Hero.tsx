@@ -4,6 +4,7 @@ import CursorImage from "../../public/images/cursor.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import MessageImage from "../../public/images/message.png";
+import BlurText from "./BlurText";
 
 const Hero = () => {
   return (
@@ -14,10 +15,18 @@ const Hero = () => {
       <div className="container relative ">
         <div className="flex justify-center mt-2  ">
           <div className="inline-flex relative ">
-            <h1 className="text-7xl sm:text-9xl font-bold tracking-tighter text-center inline-flex">
+            <h1 className="text-7xl hidden sm:text-9xl font-bold tracking-tighter text-center sm:inline-flex">
               Fancy UI <br /> is more
             </h1>
 
+            <BlurText
+            text={`Fancy UI \n is more`}
+              delay={100}
+              animateBy="letters"
+              direction="top"
+              className="text-7xl sm:hidden  font-bold tracking-tighter text-center inline-flex"
+            />
+            
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
