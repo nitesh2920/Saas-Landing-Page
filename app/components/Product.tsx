@@ -1,19 +1,18 @@
 "use client";
 import Image from "next/image";
 import screen from "../../public/images/product.avif";
-import {useRef} from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Product() {
+  const appImage = useRef<HTMLImageElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: appImage,
+    offset: ["start end", "end end"]
+  });
 
- const appImage= useRef<HTMLImageElement>(null);
- const {scrollYProgress} = useScroll({
-    target:appImage,
-    offset:["start end","end end"]
- });
-
- const rotateX = useTransform(scrollYProgress,[0,1],[15,0]);
- const opacity = useTransform(scrollYProgress,[0,1],[.3,1]);
+  const rotateX = useTransform(scrollYProgress, [0, 1], [30, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
 
   return (
     <div className="py-[70px]  bg-gradient-to-b from-black to-[#5D2CAB] sm:py-[24px] ">
@@ -30,13 +29,20 @@ export default function Product() {
         </div>
 
         <div className="flex justify-center">
-          <motion.div className="max-w-6xl"
-          style={{
-            opacity:opacity,
-            rotateX:rotateX,
-            transformPerspective:"800px"
-          }}>
-            <Image src={screen} alt="product screen " ref={appImage} className="mt-14" />
+          <motion.div
+            className="max-w-6xl"
+            style={{
+              opacity: opacity,
+              rotateX: rotateX,
+              transformPerspective: "800px"
+            }}
+          >
+            <Image
+              src={screen}
+              alt="product screen "
+              ref={appImage}
+              className="mt-14"
+            />
           </motion.div>
         </div>
       </div>

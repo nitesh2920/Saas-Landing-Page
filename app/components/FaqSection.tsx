@@ -48,7 +48,7 @@ const AccordionItem = ({ question, answer }: AccordionItemProps) => {
       >
         <div className="flex items-center justify-between ">
           <span className=" text-lg font-bold">{question}</span>
-          {isOpen ? <MinusIcon /> : <PlusIcon />}
+          {isOpen ? <MinusIcon className="cursor-pointer" /> : <PlusIcon className="cursor-pointer"/>}
         </div>
 
         <AnimatePresence>
@@ -73,7 +73,6 @@ export default function Faq() {
       <div className="bg-black py-[70px] sm:py-24 bg-gradient-to-b from-[#5D2CA8] to-black">
         <div className="container">
           <h2 className="text-center tracking-tighter text-5xl sm:text-6xl  sm:w-[648px] mx-auto text-white">Frequently Asked Question</h2>
-
           <div className="mt-12  max-w-[648px] mx-auto">
             {items.map((data, index) => (
               <AccordionItem
