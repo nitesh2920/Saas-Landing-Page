@@ -2,6 +2,18 @@ import type { NextConfig } from "next";
 import type { RuleSetRule } from "webpack";
 
 const nextConfig:NextConfig = {
+    allowedDevOrigins: ['http://192.168.1.4:3000'],
+
+   images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/dl2adjye7/**',
+         // Replace with your actual Cloudinary cloud name
+      },
+    ],
+  },
   webpack(config) {
         const rules = config.module.rules as RuleSetRule[];
 
