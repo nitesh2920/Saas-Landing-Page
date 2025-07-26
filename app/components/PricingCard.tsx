@@ -17,8 +17,8 @@ interface SubscriptionToggleProps {
 
 export function SubscriptionToggle(props: SubscriptionToggleProps) {
   return (
-    <div className="h-full  ">
-      <div className="relative flex flex-col h-full rounded-2xl bg-black border border-white/40 shadow shadow-black/80 p-6 font-bold ">
+    <div className="h-full border border-amber-800 max-w-full">
+      <div className="relative flex flex-col h-full   rounded-2xl bg-black border border-white/40 shadow shadow-black/80 p-6 font-bold ">
         {props.popular && (
           <div className="absolute top-0 right-0  mr-5 -mt-3 ">
             <div className="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-emerald-500 text-white rounded-full shadow-sm ">
@@ -90,7 +90,7 @@ const PricingCard = () => {
         </div>
       </div>
 
-      <div className="max-w-sm grid gap-6 lg:grid-cols-3  lg:max-w-none mx-auto ">
+      <div className="max-w-xl grid gap-6 lg:grid-cols-3  lg:max-w-none mx-auto  ">
         <SubscriptionToggle
           yearlyPrice={isyearlyPrice}
           planName="standard"
@@ -110,7 +110,7 @@ const PricingCard = () => {
 
       <SubscriptionToggle
           yearlyPrice={isyearlyPrice}
-          popular={true}
+          popular={false}
           planName="Perform"
           price={{ yearly: 25999, monthly: 3999 }}
           planDescription="There are many variations available, but the majority have suffered."
