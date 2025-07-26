@@ -15,8 +15,8 @@ export const PricingSection = () => {
           </p>
         </div>
 
-        {/* <div className=" max-w-xl grid gap-6 lg:grid-cols-3 lg:max-w-none mx-auto"> */}
-        <div className="border max-w-xl grid gap-6 lg:grid-cols-3 lg:max-w-none mx-auto">
+        <div className="flex flex-col items-center justify-center sm:flex-row gap-4 px-24 py-[72px] sm:py-24 ">
+
           <PricingCard />
         </div>
       </div>

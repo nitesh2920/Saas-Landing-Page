@@ -17,8 +17,8 @@ interface SubscriptionToggleProps {
 
 export function SubscriptionToggle(props: SubscriptionToggleProps) {
   return (
-    <div className="h-full border border-amber-800 max-w-full">
-      <div className="relative flex flex-col h-full   rounded-2xl bg-black border border-white/40 shadow shadow-black/80 p-6 font-bold ">
+    <div className="h-full ">
+      <div className="relative  border flex flex-col h-full   rounded-2xl bg-black border border-white/40 shadow shadow-black/80 p-6 font-bold ">
         {props.popular && (
           <div className="absolute top-0 right-0  mr-5 -mt-3 ">
             <div className="inline-flex items-center text-xs font-semibold py-1.5 px-3 bg-emerald-500 text-white rounded-full shadow-sm ">
@@ -48,7 +48,6 @@ export function SubscriptionToggle(props: SubscriptionToggleProps) {
                   hover:bg-[#5D2CA2]
                   "
           >
-            
             Purchase Plan
           </Link>
         </div>
@@ -80,17 +79,47 @@ const PricingCard = () => {
 
   return (
     <div>
-      <div className="flex justify-center max-w-[14rem] m-auto mb-8 lg:mb-16">
-        <div className="relative flex w-full flex  p-2 bg-black  rounded-full ">
-          <span className="absolute inset-0 m-1 pointer-events-none " aria-hidden="true">
-            <span className={`absolute inset-0 w-1/2 bg-[#5D2CA8] rounded-full shadow-sm shadow-[#5D2CA8] transform transition-transform duration-150 ease-in-out ${isyearlyPrice? 'translate-x-0':'translate-x-full'}`}></span>
-          </span>
-         <button className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${isyearlyPrice ? 'text-white/70' : ' text-white'}`} onClick={() => setIsYearlyPrice(true)} aria-pressed={isyearlyPrice}>Yearly <span className={`${isyearlyPrice ? 'text-indigo-200' : 'text-slate-400 '}`}>-20%</span></button>
-          <button className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${isyearlyPrice ? 'text-white/70' : ' text-white'}`} onClick={() => setIsYearlyPrice(false)} aria-pressed={isyearlyPrice}>Monthly</button>
-        </div>
-      </div>
+            <div className="flex justify-center max-w-[14rem] m-auto mb-8 lg:mb-16">
+              <div className="relative flex w-full flex  p-2 bg-black  rounded-full ">
+                <span
+                  className="absolute inset-0 m-1 pointer-events-none "
+                  aria-hidden="true"
+                >
+                  <span
+                    className={`absolute inset-0 w-1/2 bg-[#5D2CA8] rounded-full shadow-sm shadow-[#5D2CA8] transform transition-transform duration-150 ease-in-out ${
+                      isyearlyPrice ? "translate-x-0" : "translate-x-full"
+                    }`}
+                  ></span>
+                </span>
+                <button
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                    isyearlyPrice ? "text-white/70" : " text-white"
+                  }`}
+                  onClick={() => setIsYearlyPrice(true)}
+                  aria-pressed={isyearlyPrice}
+                >
+                  Yearly{" "}
+                  <span
+                    className={`${
+                      isyearlyPrice ? "text-indigo-200" : "text-slate-400 "
+                    }`}
+                  >
+                    -20%
+                  </span>
+                </button>
+                <button
+                  className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+                    isyearlyPrice ? "text-white/70" : " text-white"
+                  }`}
+                  onClick={() => setIsYearlyPrice(false)}
+                  aria-pressed={isyearlyPrice}
+                >
+                  Monthly
+                </button>
+              </div>
+            </div>
 
-      <div className="max-w-xl grid gap-6 lg:grid-cols-3  lg:max-w-none mx-auto  ">
+      <div className="max-w-xl mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none w-65 sm:w-auto">
         <SubscriptionToggle
           yearlyPrice={isyearlyPrice}
           planName="standard"
@@ -108,19 +137,20 @@ const PricingCard = () => {
           ]}
         />
 
-      <SubscriptionToggle
+        <SubscriptionToggle
           yearlyPrice={isyearlyPrice}
           popular={false}
           planName="Perform"
           price={{ yearly: 25999, monthly: 3999 }}
           planDescription="There are many variations available, but the majority have suffered."
           features={[
-            'Unlimited placeholder texts',
-            'Consectetur adipiscing elit',
-            'Excepteur sint occaecat cupidatat',
-            'Officia deserunt mollit anim',
-            'Predefined chunks as necessary',
-          ]} />
+            "Unlimited placeholder texts",
+            "Consectetur adipiscing elit",
+            "Excepteur sint occaecat cupidatat",
+            "Officia deserunt mollit anim",
+            "Predefined chunks as necessary"
+          ]}
+        />
 
         {/* Pricing tab 3 */}
         <SubscriptionToggle
@@ -129,14 +159,14 @@ const PricingCard = () => {
           price={{ yearly: 7500, monthly: 8500 }}
           planDescription="There are many variations available, but the majority have suffered."
           features={[
-            'Unlimited placeholder texts',
-            'Consectetur adipiscing elit',
-            'Excepteur sint occaecat cupidatat',
-            'Officia deserunt mollit anim',
-            'Predefined chunks as necessary',
-            'Free from repetition',
-          ]} />
-        
+            "Unlimited placeholder texts",
+            "Consectetur adipiscing elit",
+            "Excepteur sint occaecat cupidatat",
+            "Officia deserunt mollit anim",
+            "Predefined chunks as necessary",
+            "Free from repetition"
+          ]}
+        />
       </div>
     </div>
   );
