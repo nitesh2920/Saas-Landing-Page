@@ -4,6 +4,8 @@ import LogoSection from './components/LogoSection';
 import Product from './components/Product';
 import Faq from './components/FaqSection';
 import Features from './components/Features';
+import PricingCard from './components/PricingCard';
+import { PricingSection } from './components/PricingSection';
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
    <Features/>
    <Product/>
    <Faq/>
+   <PricingSection/>
   
    </div>
     </>
