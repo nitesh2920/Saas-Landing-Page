@@ -5,6 +5,7 @@ import Product from './components/Product';
 import Faq from './components/FaqSection';
 import Features from './components/Features';
 import { PricingSection } from './components/PricingSection';
+import CallToAction from './components/CallToAction';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
    <Product/>
    <Faq/>
    <PricingSection/>
+   <CallToAction/>
   
    </div>
     </>
