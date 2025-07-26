@@ -21,7 +21,7 @@ const Hero = () => {
 
             <BlurText
             text={`Fancy UI \n is more`}
-              delay={100}
+              delay={80}
               animateBy="letters"
               direction="top"
               className="text-7xl sm:hidden  font-bold tracking-tighter text-center inline-flex"
@@ -29,7 +29,7 @@ const Hero = () => {
             
             <motion.div
               initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }} //whileinview
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.4 }}
               className="absolute  right-[420px] top-[108px] hidden sm:inline"
@@ -48,7 +48,7 @@ const Hero = () => {
 
             <motion.div
               initial={{ opacity: 0, y: -100 }}
-              whileInView={{ opacity: 100, y: 0 }}
+              animate={{ opacity: 100, y: 0 }}  //whileInview
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.4 }}
               className="absolute left-[440px] top-[60px] hidden sm:inline  "
@@ -67,14 +67,22 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex justify-center  mt-3 ">
+        <motion.div 
+        initial={{opacity:0, y:20}}
+        animate={{opacity:1,y:0}}
+        transition={{
+          delay:0.9,
+          duration:0.5,
+          ease:"easeOut",
+        }}
+        className="flex justify-center  mt-3 ">
           <p className="text-xl text-center mt-9 max-w-md">
             Experience a sleek, modern interface built for clarity and
             performance. Designed to impress, crafted to deliver every pixel has
             a purpose. Experience a sleek, modern interface built for clarity
             and performance.
           </p>
-        </div>
+        </motion.div>
 
         <div className="flex justify-center mt-9 ">
           <button className="bg-white cursor-pointer text-black py-3 px-5 rounded-lg font-medium">
