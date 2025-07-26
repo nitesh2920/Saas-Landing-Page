@@ -126,7 +126,7 @@ const PricingCard = () => {
         <SubscriptionToggle
           yearlyPrice={isyearlyPrice}
           planName="Enterprise"
-          price={{ yearly: 79, monthly: 85 }}
+          price={{ yearly: 7500, monthly: 8500 }}
           planDescription="There are many variations available, but the majority have suffered."
           features={[
             'Unlimited placeholder texts',
